@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Uploader</title>
+</head>
+<body>
+    <%- include("partials/navbar.ejs", {user: user || null}) %>
+
+    <h1>File uploader</h1>
+
+    <% if (user) { %>
+        <h1>Welcome, <%= user.username %></h1>
+        <a href="/log-out">Log out</a>
+
+        <h2>Add a file</h2>
+        <form action="/file/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" required>
+
+            <button type="submit">Upload</button>
+        </form>
+
+        <h2>Create a folder</h2>
+    
+        <form action="/folder/create" method="POST">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" required>
+
+            <button type="submit">Create Folder</button>
+        </form>
+
+        <h2>Your folders</h2>
+
+        <% if (folders && folders.length > 0) { %>
+            <ul>
+                <% folders.forEach(folder => { %>
+                    <li>
+                        <a href="/folder/<%= folder.id %>"><%= folder.name %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <h2>There are no folders.</h2>
+        <% } %>
+        
+        <h2>Files</h2>
+
+        <% if (files && files.length > 0) { %>
+            <ul>
+                <% files.forEach(file => { %>
+                    <li>
+                        <a href="/file/<%= file.id %>"><%= file.name %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <h2>There are no files.</h2>
+        <% } %>
+    <% } else { %>
+        <a href="/log-in">Log in</a>
+        <a href="/sign-up">Sign up</a>
+    <% } %>
+    
+</body>
+</html>

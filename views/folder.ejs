@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= folder.name %></title>
+</head>
+<body>
+    <%- include("partials/navbar.ejs", {user: user || null}) %>
+
+    <a href="/back">Go back</a>
+
+    <h1><%= folder.name %></h1>
+
+    <form action="/folder/<%= folder.id %>?_method=PUT" method="POST">
+        <label for="name">Edit folder name: </label>
+        <input type="text" name="name" id="name" required>
+
+        <button type="submit">Update</button>
+    </form>
+
+    <form action="/folder/<%= folder.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Folder</button>
+    </form>
+
+    <h2>Create a folder</h2>
+    
+    <form action="/folder/<%= folder.id %>/createFolder" method="POST">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" required>
+
+        <button type="submit">Create Folder</button>
+    </form>
+
+    <h2>Add a file</h2>
+
+    <form action="/folder/<%= folder.id %>" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" required>
+
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Folders</h2>
+
+    <% if (nestedFolders && nestedFolders.length > 0) { %>
+        <ul>
+            <% nestedFolders.forEach(folder => { %>
+                <li>
+                    <a href="/folder/<%= folder.id %>"><%= folder.name %></a>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <h2>There are no folders.</h2>
+    <% } %>
+
+    <h2>Folder files</h2>
+
+    <% if (files && files.length > 0) { %>
+        <ul>
+            <% files.forEach(file => { %>
+                <li>
+                    <a href="/file/<%= file.id %>"><%= file.name %></a>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <h2>There are no files.</h2>
+    <% } %>
+</body>
+</html>

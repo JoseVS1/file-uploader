@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Details</title>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>
+
+    <h1>File Details</h1>
+
+    <h2>Name: <%= file.name %></h2>
+    <h2>Size: <%= file.size %></h2>
+    <h2>Upload Time: <%= file.uploaded_at %></h2>
+
+    <a href="<%= file.url %>">Download</a>
+
+    <form action="/file/<%= file.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>
