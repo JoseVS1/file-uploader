@@ -1,5 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 const cloudinary = require('cloudinary').v2;
+const formatBytes = require("../lib/formatBytes");
 
 const prisma = new PrismaClient();
 
@@ -13,8 +14,10 @@ const getFilePage = async (req, res) => {
             }
         })
 
+        file.size = formatBytes(file.size);
+
         if (!file) {
-            return res.status(404).json({msg: "File not found"})
+            return res.status(404).json({msg: "File not found"});
         }
 
         res.render("file", {file});
