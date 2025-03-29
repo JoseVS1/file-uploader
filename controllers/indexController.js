@@ -63,7 +63,9 @@ const postSignup = async (req, res, next) => {
 }
 
 const getLoginPage = (req, res) => {
-    res.render("login", {messages: req.flash("error")});
+    const errorMessages = req.flash("error");
+    
+    res.render("login", {messages: errorMessages});
 }
 
 const logout = (req, res, next) => {

@@ -3,31 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
     <title>Log in</title>
 </head>
 <body>
-    <h1>Log in</h1>
+    <div class="login-container">
+        <div class="login">
+            <h1>Log in</h1>
 
-    <% if (messages.length > 0) { %>
-        <div class="alert alert-danger">
-            <ul>
-                <% messages.forEach(function(message) { %>
-                    <li><%= message %></li>
-                <% }) %>
-            </ul>
-        </div>
-    <% } %>
+            <% if (messages.length > 0) { %>
+                <div class="alert alert-danger">
+                    <ul>
+                        <% messages.forEach(function(message) { %>
+                            <li><%= message %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
 
-    <form action="/log-in" method="POST">
-        <label for="username">Username: </label>
-        <input type="text" name="username" id="username" required>
+            <form class="login-form" action="/log-in" method="POST">
+                <input type="text" name="username" id="username" placeholder="Username" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
 
-        <label for="password">Password: </label>
-        <input type="password" name="password" id="password" required>
-
-        <button type="submit">Log in</button>
-    </form>
-
-    <h2>Don't have an account? <a href="/sign-up">Create one</a>.</h2>
+                <button type="submit">Log in</button>
+            </form>
+    
+            <h2>Don't have an account? <a href="/sign-up">Create one</a>.</h2>
+        </div>        
+    </div>
 </body>
 </html>

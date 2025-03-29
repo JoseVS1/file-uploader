@@ -1,0 +1,156 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    font-size: 62.5%;
+    color: white;
+    font-family: "Palanquin", sans-serif;
+}
+
+.login-container {
+    background-color: #0f172a;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login, .signup {
+    background-color: #1E293B;
+    padding: 3rem 0;
+    width: 40rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.login h1, .signup h1 {
+    font-size: 2.4rem;
+}
+
+.login-form, .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.6rem;
+}
+
+.login-form input, .signup-form input {
+    height: 4.2rem;
+    width: 85%;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding-left: 9px;
+    color: #94A3B8;
+    font-size: 1.6rem;
+}
+
+.login-form button, .signup-form button {
+    height: 5.2rem;
+    width: 87%;
+    background-color: #27b9f8;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border: none;
+}
+
+.login-form button:hover, .signup-form button:hover {
+    background-color: #22a7e0;
+}
+
+.login h2, .signup h2 {
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.login a, .signup a {
+    color: #38BDF8;
+}
+
+.login a:hover, .signup a:hover {
+    color: #31a9dd;
+}
+
+.alert {
+    font-size: 1.5rem;
+    color: rgb(254, 57, 57);
+}
+
+.signup {
+    width: 45rem;
+}
+
+.signup-container {
+    background-color: #0f172a;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form {
+    gap: 2rem;
+}
+
+.signup-form-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.signup-form label {
+    width: 85%;
+    font-size: 1.6rem;
+}

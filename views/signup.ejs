@@ -3,29 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
     <title>Sign Up</title>
 </head>
 <body>
-    <h1>Sign up</h1>
+    <div class="signup-container">
+        <div class="signup">
+            <h1>Sign up</h1>
 
-    <%- include("partials/errors.ejs", {errors: errors}) %>
+        <%- include("partials/errors.ejs", {errors: errors}) %>
+    
+        <form class="signup-form" action="/sign-up" method="POST">
+            <div class="signup-form-field">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" required>
+            </div>
 
-    <form action="/sign-up" method="POST">
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email" required>
+            <div class="signup-form-field">
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username" required>
+            </div>
 
-        <label for="username">Username: </label>
-        <input type="text" name="username" id="username" required>
+            <div class="signup-form-field">
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" required>
+            </div>
 
-        <label for="password">Password: </label>
-        <input type="password" name="password" id="password" required>
-
-        <label for="confirmPassword">Confirm password: </label>
-        <input type="password" name="confirmPassword" id="confirmPassword" required>
-        
-        <button type="submit">Sign up</button>
-    </form>
-
-    <h2>Already have an account? <a href="/log-in">Log in</a>.</h2>
+            <div class="signup-form-field">
+                <label for="confirmPassword">Confirm password: </label>
+                <input type="password" name="confirmPassword" id="confirmPassword" required>
+            </div>
+            
+            <button type="submit">Sign up</button>
+        </form>
+    
+        <h2>Already have an account? <a href="/log-in">Log in</a>.</h2>
+        </div>
+    </div>
 </body>
 </html>
