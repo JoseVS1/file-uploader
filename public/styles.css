@@ -204,7 +204,6 @@ a {
 .index-container {
     background-color: #0f172a;
     color: white;
-    height: 89vh;
     padding: 3rem 5rem;
     display: flex;
     flex-direction: column;
@@ -224,7 +223,7 @@ a {
 .add-file-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     background-color: #1E293B;
     padding: 3rem 4rem;
     border-radius: 8px;
@@ -297,7 +296,7 @@ a {
 .create-folder-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     background-color: #1E293B;
     padding: 3rem 4rem;
     border-radius: 8px; 
@@ -326,7 +325,7 @@ a {
 .folders-container, .files-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     background-color: #1E293B;
     padding: 3rem 4rem;
     border-radius: 8px; 
@@ -359,4 +358,140 @@ a {
 .folder a:hover, .file a:hover {
     color: #5492f6;
     background-color: #3a485e4f;
+}
+
+/* FOLDER PAGE */
+
+.folder-container {
+    background-color: #0f172a;
+    color: white;
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.back-button {
+    background-color: #38BDF8;
+    font-size: 1.8rem;
+    width: fit-content;
+    padding: 1.2rem 1.5rem;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #22a7e0;
+    color: rgb(237, 236, 236);
+}
+
+.folder-container h1 {
+    font-size: 3.6rem;
+    font-weight: bold;
+}
+
+.folder-container input[type=text] {
+    background-color: #1F2937;
+}
+
+.edit-folder-form {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-folder-form input, .create-subfolder-form input {
+    width: 87%;
+    padding: 2rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.6rem;
+    color: #94A3B8;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+}
+
+.edit-folder-form button, .create-subfolder-form button {
+    background-color: #38BDF8;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bold;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.edit-folder-form button:hover, .create-subfolder-form button:hover {
+    background-color: #22a7e0;
+    color: rgb(237, 236, 236);
+}
+
+.delete-folder-form button {
+    background-color: #EF4444;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bold;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete-folder-form button:hover {
+    background-color: #d13c3c;
+    color: rgb(237, 236, 236);
+}
+
+.folder-name-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-subfolder-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 4rem;
+    background-color: #1E293B;
+    border-radius: 8px;
+}
+
+.folder-container h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.create-subfolder-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-file-form button {
+    background-color: #38BDF8;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border: none;
+    height: 4rem;
+}
+
+.add-file-form button:hover {
+    background-color: #22a7e0;
+    color: rgb(237, 236, 236);
+}
+
+.folder-items-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1E293B;
+    padding: 3rem 4rem;
+    border-radius: 8px;
+    min-height: 50rem;
+}
+
+.folder-items-container h3 {
+    font-size: 2rem;
+    padding: 10rem 50% 10rem 50%;
 }

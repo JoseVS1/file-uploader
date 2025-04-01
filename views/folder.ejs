@@ -3,69 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8a8eee9808.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
     <title><%= folder.name %></title>
 </head>
 <body>
     <%- include("partials/navbar.ejs", {user: user || null}) %>
 
-    <a href="/back">Go back</a>
+    <div class="folder-container">
+        <a class="back-button" href="/back">Go back</a>
 
-    <h1><%= folder.name %></h1>
+        <div class="folder-name-container">
+            <h1><%= folder.name %></h1>
 
-    <form action="/folder/<%= folder.id %>?_method=PUT" method="POST">
-        <label for="name">Edit folder name: </label>
-        <input type="text" name="name" id="name" required>
-
-        <button type="submit">Update</button>
-    </form>
-
-    <form action="/folder/<%= folder.id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete Folder</button>
-    </form>
-
-    <h2>Create a folder</h2>
+            <form class="delete-folder-form" action="/folder/<%= folder.id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Folder</button>
+            </form>
+        </div>
+        
+        <form class="edit-folder-form" action="/folder/<%= folder.id %>?_method=PUT" method="POST">
+            <input type="text" name="name" id="name" placeholder="Rename Folder" required>
+        
+            <button type="submit">Update</button>
+        </form>
     
-    <form action="/folder/<%= folder.id %>/createFolder" method="POST">
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name" required>
+        <div class="create-subfolder-container">
+            <h2>Create Subfolder</h2>
+        
+            <form class="create-subfolder-form" action="/folder/<%= folder.id %>/createFolder" method="POST">
+                <input type="text" name="name" id="name" placeholder="Subfolder Name" required>
+        
+                <button type="submit">Create Folder</button>
+            </form>
+        </div>
 
-        <button type="submit">Create Folder</button>
-    </form>
+        <div class="add-file-container">
+            <h2>Add a file</h2>
+    
+            <form class="add-file-form" action="/folder/<%= folder.id %>" method="POST" enctype="multipart/form-data">
+                <div class="file-select">
+                    <div>
+                        <input type="file" name="file" id="file" required>
+                        <label for="file">Select file</label>
+                    </div>
+                
+                    <span id="file-name">No file selected</span>
+                </div>
+    
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    
+        <div class="folder-items-container">
+            <% if (nestedFolders.length === 0 && files.length === 0) { %>
+                <h3>Empty...</h3>
+            <% } %>
+            
+            <% if (nestedFolders && nestedFolders.length > 0) { %>
+                <ul class="folder-list">
+                    <% nestedFolders.forEach(folder => { %>
+                        <li class="folder">
+                            <a href="/folder/<%= folder.id %>"><i class="fa-solid fa-folder"></i> <%= folder.name %></a>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
+    
+            <% if (files && files.length > 0) { %>
+                <ul class="file-list">
+                    <% files.forEach(file => { %>
+                        <li class="file">
+                            <a href="/file/<%= file.id %>"><%= file.name %></a>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
+        </div>
+    </div>
 
-    <h2>Add a file</h2>
-
-    <form action="/folder/<%= folder.id %>" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" id="file" required>
-
-        <button type="submit">Upload</button>
-    </form>
-
-    <h2>Folders</h2>
-
-    <% if (nestedFolders && nestedFolders.length > 0) { %>
-        <ul>
-            <% nestedFolders.forEach(folder => { %>
-                <li>
-                    <a href="/folder/<%= folder.id %>"><%= folder.name %></a>
-                </li>
-            <% }) %>
-        </ul>
-    <% } else { %>
-        <h2>There are no folders.</h2>
-    <% } %>
-
-    <h2>Folder files</h2>
-
-    <% if (files && files.length > 0) { %>
-        <ul>
-            <% files.forEach(file => { %>
-                <li>
-                    <a href="/file/<%= file.id %>"><%= file.name %></a>
-                </li>
-            <% }) %>
-        </ul>
-    <% } else { %>
-        <h2>There are no files.</h2>
-    <% } %>
+    <script>
+        document.getElementById('file').addEventListener('change', function() {
+            let fileName = this.files[0] ? this.files[0].name : 'No file selected';
+            document.getElementById('file-name').textContent = fileName;
+        });
+    </script>
 </body>
 </html>
