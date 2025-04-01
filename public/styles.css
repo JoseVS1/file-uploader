@@ -44,9 +44,48 @@ table {
 
 html {
     font-size: 62.5%;
-    color: white;
     font-family: "Palanquin", sans-serif;
 }
+
+/* NAVBAR */
+
+nav {
+    height: 6.4rem;
+    background-color: #1F2937;
+    color: white;
+}
+
+nav a {
+    color: #3B82F6;
+    font-size: 1.6rem;
+}
+
+nav a:hover {
+    color: #316ccc;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    padding: 0 5rem;
+}
+
+.home-link {
+    color: white;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.home-link:hover {
+    color: rgb(217, 217, 217);
+}
+
+/* LOGIN PAGE */
 
 .login-container {
     background-color: #0f172a;
@@ -65,10 +104,12 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 3.5rem;
+    color: white;
 }
 
 .login h1, .signup h1 {
     font-size: 2.4rem;
+    font-weight: bold;
 }
 
 .login-form, .signup-form {
@@ -99,6 +140,7 @@ html {
     font-size: 1.8rem;
     cursor: pointer;
     border: none;
+    font-weight: bold;
 }
 
 .login-form button:hover, .signup-form button:hover {
@@ -125,6 +167,8 @@ a {
     font-size: 1.5rem;
     color: rgb(254, 57, 57);
 }
+
+/* SIGNUP PAGE */
 
 .signup {
     width: 45rem;
@@ -153,4 +197,166 @@ a {
 .signup-form label {
     width: 85%;
     font-size: 1.6rem;
+}
+
+/* INDEX PAGE */
+
+.index-container {
+    background-color: #0f172a;
+    color: white;
+    height: 89vh;
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.index-container h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.index-container h1 {
+    font-size: 3.6rem;
+    font-weight: bold;
+}
+
+.add-file-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #1E293B;
+    padding: 3rem 4rem;
+    border-radius: 8px;
+}
+
+.add-file-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.index-container form button {
+    background-color: #38BDF8;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border: none;
+    height: 4rem;
+}
+
+.index-container form button:hover {
+    background-color: #22a7e0;
+    color: rgb(237, 236, 236);
+}
+
+.file-select {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    width: 40%;
+    gap: 2rem;
+}
+
+.file-select input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-select label {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.file-select label:hover {
+    background-color: #429a45;
+}
+
+#file-name {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #a7aeba;
+    font-size: 1.5rem;
+}
+
+.create-folder-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #1E293B;
+    padding: 3rem 4rem;
+    border-radius: 8px; 
+}
+
+.create-folder-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.create-folder-container form label {
+    font-size: 1.8rem;
+}
+
+.create-folder-container form input {
+    height: 4.2rem;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding-left: 9px;
+    color: #94A3B8;
+    font-size: 1.6rem;
+}
+
+.folders-container, .files-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #1E293B;
+    padding: 3rem 4rem;
+    border-radius: 8px; 
+}
+
+.folders-container h3, .files-container h3 {
+    font-size: 1.8rem;
+    color: #a7aeba;
+}
+
+.folder-list, .file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.folder, .file {
+    font-size: 2.2rem;
+    color: #3B82F6;
+}
+
+.folder a, .file a {
+    color: #3B82F6;
+    width: 100%;
+    display: block;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+}
+
+.folder a:hover, .file a:hover {
+    color: #5492f6;
+    background-color: #3a485e4f;
 }
