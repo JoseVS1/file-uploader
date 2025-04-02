@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8a8eee9808.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
     <title>File Details</title>
 </head>
 <body>
     <%- include("partials/navbar.ejs") %>
 
-    <h1>File Details</h1>
+    <div class="file-container">
+        <a class="back-button" href="javascript:history.back()">Go back</a>
+        
+        <div class="container">
+            <h1>File Details</h1>
 
-    <h2>Name: <%= file.name %></h2>
-    <h2>Size: <%= file.size %></h2>
-    <h2>Upload Time: <%= file.uploaded_at %></h2>
-
-    <a href="<%= file.url %>">Download</a>
-
-    <form action="/file/<%= file.id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-    </form>
+            <div class="file-card">
+                <div class="group">
+                    <h2><span class="bold">Name:</span> <%= file.name %></h2>
+                    <h2><span class="bold">Size:</span> <%= file.size %></h2>
+                    <h2><span class="bold">Upload Time:</span> <%= file.uploaded_at %></h2>
+                </div>
+            
+                <div class="group">
+                    <a class="download-button" href="<%= file.url %>">Download</a>
+            
+                    <form class="delete-file-form" action="/file/<%= file.id %>?_method=DELETE" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

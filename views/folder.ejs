@@ -14,8 +14,11 @@
     <%- include("partials/navbar.ejs", {user: user || null}) %>
 
     <div class="folder-container">
-        <a class="back-button" href="/back">Go back</a>
-
+        <% if (folder.parentFolderId) { %>
+            <a class="back-button" href="/folder/<%= folder.parentFolderId %>">Go back</a>
+        <% } else { %>
+            <a class="back-button" href="/">Go back</a>
+        <% } %>
         <div class="folder-name-container">
             <h1><%= folder.name %></h1>
 
@@ -59,7 +62,9 @@
     
         <div class="folder-items-container">
             <% if (nestedFolders.length === 0 && files.length === 0) { %>
-                <h3>Empty...</h3>
+                <div class="empty-container">
+                    <h3>Empty...</h3>
+                </div>
             <% } %>
             
             <% if (nestedFolders && nestedFolders.length > 0) { %>

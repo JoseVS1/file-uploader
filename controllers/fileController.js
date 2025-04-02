@@ -36,9 +36,6 @@ const postFileUpload = async (req, res) => {
             resource_type: 'auto',
           });
 
-        console.log(result);
-
-
         await prisma.file.create({
             data: {
                 url: result.url,
@@ -76,7 +73,13 @@ const deleteFile = async (req, res) => {
             }
         });
 
-        res.redirect("/");
+        const folderId = file.folderId;
+
+        if (folderId) {
+            res.redirect(`/folder/${folderId}`);
+        } else {
+            res.redirect("/");
+        }
     } catch (err) {
         console.error(err);
     }
