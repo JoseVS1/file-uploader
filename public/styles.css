@@ -599,6 +599,11 @@ a {
         width: 90%;
     }
 
+    /* LOGIN PAGE */
+    .login {
+        width: 90%;
+    }
+
     /* INDEX PAGE */
     .index-container {
         
@@ -609,6 +614,11 @@ a {
 @media (min-width: 501px) and (max-width: 650px) {
     /* SIGNUP PAGE */
     .signup {
+        width: 75%;
+    }
+
+    /* LOGIN PAGE */
+    .login {
         width: 75%;
     }
 }
