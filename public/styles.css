@@ -47,6 +47,10 @@ html {
     font-family: "Palanquin", sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* NAVBAR */
 
 nav {
@@ -255,7 +259,7 @@ a {
     position: relative;
     display: inline-block;
     display: flex;
-    width: 40%;
+    /* width: 40%; */
     gap: 2rem;
 }
 
@@ -291,6 +295,9 @@ a {
     font-style: italic;
     color: #a7aeba;
     font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .create-folder-container {
@@ -402,13 +409,12 @@ a {
 }
 
 .edit-folder-form {
-    width: 70%;
+    width: 60%;
     display: flex;
-    justify-content: space-between;
+    gap: 4rem;
 }
 
 .edit-folder-form input, .create-subfolder-form input {
-    width: 87%;
     padding: 2rem;
     border-radius: 8px;
     border: none;
@@ -416,6 +422,10 @@ a {
     color: #94A3B8;
     background-color: #1F2937;
     border: 1px solid #374151;
+}
+
+.edit-folder-form input {
+    width: 80%;
 }
 
 .edit-folder-form button, .create-subfolder-form button {
@@ -469,7 +479,9 @@ a {
 
 .create-subfolder-form {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 4rem;
+
 }
 
 .add-file-form button {
@@ -614,6 +626,22 @@ a {
     .index-container {
         padding: 3rem;
     }
+
+    /* FOLDER PAGE */
+    .folder-container {
+        padding: 3rem;
+    }
+
+    .edit-folder-form {
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .create-subfolder-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
 
 /* TABLET */
@@ -626,5 +654,10 @@ a {
     /* LOGIN PAGE */
     .login {
         width: 75%;
+    }
+
+    /* FOLDER PAGE */
+    .edit-folder-form {
+        width: 80%;
     }
 }
