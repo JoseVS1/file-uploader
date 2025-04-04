@@ -612,6 +612,11 @@ a {
 
 /* PHONE  430 650*/
 @media (max-width: 500px) {
+    /* NAVBAR */
+    nav ul {
+        padding: 0 3rem;
+    }
+
     /* SIGNUP PAGE */
     .signup {
         width: 90%;
