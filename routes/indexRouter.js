@@ -42,7 +42,7 @@ const signupErrorHandler = (req, res, next) => {
     next();
 };
 
-indexRouter.get("/", indexController.getIndexPage);
+indexRouter.get("/", isAuth, indexController.getIndexPage);
 indexRouter.get("/sign-up", indexController.getSignupPage);
 indexRouter.post("/sign-up", signupValidators, signupErrorHandler, indexController.postSignup);
 indexRouter.get("/log-in", indexController.getLoginPage);

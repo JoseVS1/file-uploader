@@ -591,3 +591,24 @@ a {
 .delete-file-form button:hover {
     background-color: #cf3b3b;
 }
+
+/* PHONE  430 650*/
+@media (max-width: 500px) {
+    /* SIGNUP PAGE */
+    .signup {
+        width: 90%;
+    }
+
+    /* INDEX PAGE */
+    .index-container {
+        
+    }
+}
+
+/* TABLET */
+@media (min-width: 501px) and (max-width: 650px) {
+    /* SIGNUP PAGE */
+    .signup {
+        width: 75%;
+    }
+}
