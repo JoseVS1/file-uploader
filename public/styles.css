@@ -360,6 +360,12 @@ a {
     background-color: #3a485e4f;
 }
 
+.folder a, .file a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* FOLDER PAGE */
 
 .folder-container {
@@ -606,7 +612,7 @@ a {
 
     /* INDEX PAGE */
     .index-container {
-        
+        padding: 3rem;
     }
 }
 
