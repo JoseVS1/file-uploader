@@ -463,6 +463,10 @@ a {
     justify-content: space-between;
 }
 
+.folder-name-container h1 {
+    overflow-wrap: break-word;
+}
+
 .create-subfolder-container {
     display: flex;
     flex-direction: column;
@@ -479,7 +483,6 @@ a {
 
 .create-subfolder-form {
     display: flex;
-    /* justify-content: space-between; */
     gap: 4rem;
 
 }
@@ -637,6 +640,15 @@ a {
         padding: 3rem;
     }
 
+    .folder-name-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .folder-name-container h1 {
+        overflow-wrap: break-word;
+    }
+
     .edit-folder-form {
         width: 100%;
         gap: 2rem;
@@ -649,8 +661,8 @@ a {
     }
 }
 
-/* TABLET */
-@media (min-width: 501px) and (max-width: 650px) {
+/* TABLET  max 650*/
+@media (min-width: 501px) and (max-width: 1260px) {
     /* SIGNUP PAGE */
     .signup {
         width: 75%;
@@ -664,5 +676,14 @@ a {
     /* FOLDER PAGE */
     .edit-folder-form {
         width: 80%;
+    }
+
+    .folder-name-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .folder-name-container h1 {
+        overflow-wrap: break-word;
     }
 }
