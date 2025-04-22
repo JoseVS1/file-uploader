@@ -147,7 +147,7 @@ File Uploader is a full-stack web application built with Node.js, Express, and P
 
 ## License
 
-[MIT License](LICENSE)
+MIT License
 
 ## Acknowledgements
 
